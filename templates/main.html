@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<style type="text/css">
+		body, html {width: 100%;height: 100%;margin:0;}
+		#allmap{width:100%;height:500px;}
+		p{margin-left:5px; font-size:14px;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=U6YGl8b0RYT884NtRFWh2RBnod5sW5Xr"></script>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<title>fqa</title>
+</head>
+<body class="w3-content" style="max-width:1300px">
+
+<!-- First Grid: Who are you -->
+<div class="w3-row">
+  <div class="w3-third w3-black w3-container w3-center" style="height:700px">
+    <div class="w3-padding-64">
+      <h1>WHO ARE YOU?</h1>
+    </div>
+    <div class="w3-padding-64">
+      <a href="#" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">HOME</a>
+      <a href="#damage" class="w3-button w3-black w3-block w3-hover-yellow w3-padding-16">REPORT DAMAGE</a>
+      <a href="#live" class="w3-button w3-black w3-block w3-hover-red w3-padding-16">LIVE</a>
+      <a href="#victim" class="w3-button w3-black w3-block w3-hover-orange w3-padding-16">VICTIM</a>
+      <a href="#rescuer" class="w3-button w3-black w3-block w3-hover-blue w3-padding-16">RESCUER</a>
+    </div>
+  </div>
+  <div class="w3-twothird w3-teal w3-container" style="height:700px">
+    <div class="w3-padding-64 w3-center">
+      <h1>WHAT IS EARTHQUICK?</h1>
+        <img src="../static/earthquick.png" height="300" width="300">
+      <!-- <img src="data:image/png;base64,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" class="w3-margin w3-circle" alt="Person" style="width:50%"> -->
+      <div class="w3-left-align w3-padding-large">
+        <p>We are the EARTHQUICK, aiming to solve problems that earthquakes can cause.</p>
+        <p>For more info, please contact: 110</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- DAMAGE -->
+<div class="w3-row" id="damage">
+  <div class="w3-third w3-black w3-container w3-center" style="height:700px">
+    <div class="w3-padding-64">
+      <h1>WHO ARE YOU?</h1>
+    </div>
+     <div class="w3-padding-64">
+      <a href="#" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">HOME</a>
+      <a href="#damage" class="w3-button w3-black w3-block w3-hover-yellow w3-padding-16">REPORT DAMAGE</a>
+      <a href="#live" class="w3-button w3-black w3-block w3-hover-red w3-padding-16">LIVE</a>
+      <a href="#victim" class="w3-button w3-black w3-block w3-hover-orange w3-padding-16">VICTIM</a>
+      <a href="#rescuer" class="w3-button w3-black w3-block w3-hover-blue w3-padding-16">RESCUER</a>
+    </div>
+  </div>
+  <div class="w3-twothird w3-yellow w3-container" style="height:700px">
+    <div class="w3-padding-64 w3-padding-large">
+      <h1>REPORT DAMAGE LOCATION</h1>
+      <p class="w3-opacity">GET IN TOUCH</p>
+      <form class="w3-container w3-card w3-padding-32 w3-white" action="/main#live" target="_blank"  >
+        <div class="w3-section">
+          <label>Longtitude</label>
+          <input class="w3-input" style="width:100%;" type="text" required name="Longtitude">
+        </div>
+        <div class="w3-section">
+          <label>Latitude</label>
+          <input class="w3-input" style="width:100%;" type="text" required name="Latitude">
+        </div>
+        <button type="submit" class="w3-button w3-teal w3-right">Send</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- LIVE -->
+<div class="w3-row" id="live">
+  <div class="w3-third w3-black w3-container w3-center" style="height:700px">
+    <div class="w3-padding-64">
+      <h1>WHO ARE YOU?</h1>
+    </div>
+     <div class="w3-padding-64">
+      <a href="#" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">HOME</a>
+      <a href="#damage" class="w3-button w3-black w3-block w3-hover-yellow w3-padding-16">REPORT DAMAGE</a>
+      <a href="#live" class="w3-button w3-black w3-block w3-hover-red w3-padding-16">LIVE</a>
+      <a href="#victim" class="w3-button w3-black w3-block w3-hover-orange w3-padding-16">VICTIM</a>
+      <a href="#rescuer" class="w3-button w3-black w3-block w3-hover-blue w3-padding-16">RESCUER</a>
+    </div>
+  </div>
+  <div class="w3-twothird w3-red w3-container" style="height:700px">
+    <div class="w3-padding-64 w3-padding-large">
+      <body>
+	    <div id="allmap"></div>
+      </body>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+
+
+
+
+	map = new BMap.Map("allmap");
+	map.centerAndZoom(new BMap.Point(103.63482, 30.987727), 13.0);
+	var icon_resource_site = new BMap.Icon("../static/icons8-warehouse-64.png",new BMap.Size(50,50),  {anchor: new BMap.Size(15, 22)});
+	icon_resource_site.setImageSize(new BMap.Size(20, 20))
+	var icon_aid_site = new BMap.Icon("../static/icons8-medical-bag-50.png",new BMap.Size(50,50),  {anchor: new BMap.Size(15, 22)});
+    icon_aid_site.setImageSize(new BMap.Size(20, 20))
+	var icon_damage = new BMap.Icon("../static/icons8-delete-50.png",new BMap.Size(50,50),  {anchor: new BMap.Size(15, 22)});
+    icon_damage.setImageSize(new BMap.Size(20, 20))
+	var icon_victim = new BMap.Icon("../static/icons8-sick-50.png",new BMap.Size(50,50),  {anchor: new BMap.Size(15, 22)});
+    icon_victim.setImageSize(new BMap.Size(20, 20))
+	var icon_start = new BMap.Icon("../static/icons8-map-pinpoint-80.png",new BMap.Size(50,50),  {anchor: new BMap.Size(15, 29)});
+    icon_start.setImageSize(new BMap.Size(20, 20))
+	var icon_end = new BMap.Icon("../static/icons8-map-pinpoint-50.png",new BMap.Size(50,50),  {anchor: new BMap.Size(15, 29)});
+    icon_end.setImageSize(new BMap.Size(20, 20))
+	var site_info = [[103.642222,30.987944,"Resource Site (103.642222,30.987944)"],
+                    [103.702588,30.918882,"Resource Site (103.702588,30.918882)"],
+                    [103.65717,30.981999,"Aid Site (103.65717,30.981999)"],
+                    [103.663063,30.984229,"Aid Site (103.663063,30.984229)"],
+                    [103.638198,30.968624,"Aid Site (103.638198,30.968624)"],
+                    [103.622244,30.996364,"Aid Site (103.622244,30.996364)"],
+                    [103.628424,31.009859000000002,"Aid Site (103.628424,31.009859000000002)"],
+                    [103.58444300000001,30.83284,"Aid Site (103.58444300000001,30.83284)"],
+                    //[8,103.739958,30.924334,"Aid Site (103.739958,30.924334)"],
+                    //[9,103.702588,30.918882,"Aid Site (103.702588,30.918882)"],
+                    //[0,103.59155799999999,31.026076,"Aid Site (103.59155799999999,31.026076)"],
+                    [103.66514699999999,31.021867999999998,"Aid Site (103.66514699999999,31.021867999999998)"],
+                    [103.61872199999999,30.969986,"Aid Site (103.61872199999999,30.969986)"],
+                    [103.60186999999999,30.965558,"Aid Site (103.60186999999999,30.965558)"]];
+                    //[14,103.636185,30.963762,"Aid Site (103.636185,30.963762)"]];
+    var damage_info = [[103.629081,31.007017,"RoadDamage,103.629081,31.007017"],
+                        [103.621032,31.01135,"RoadDamage,103.621032,31.01135"],
+                        [103.622039,30.983243,"RoadDamage,103.622039,30.983243"],
+                        [103.629944,30.97767,"RoadDamage,103.629944,30.97767"],
+                        [103.522434,31.056651,"RoadDamage,103.522434,31.056651"],
+                        [103.466668,31.002684,"RoadDamage,103.466668,31.002684"],
+                        [103.790345,30.877798,"RoadDamage,103.790345,30.877798"],
+                        [103.72308,30.824225,"RoadDamage,103.72308,30.824225"],
+                        [103.766774,31.023977,"RoadDamage,103.766774,31.023977"]];
+    var victim_info = [[103.1451, 31.1153, 1, 0, 0, 1, 'I need water.,103.1451,31.1153'],
+                         [103.1322, 31.1244, 0, 1, 1, 1, 'I am hungry and cold.,103.1322,31.1244'],
+                         [102.9797, 31.0293, 0, 0, 0, 1, 'I think my bone broken,102.9797,31.0293'],
+                         [103.0021, 30.9812, 1, 1, 1, 1, 'I am dying.,103.0021,30.9812'],
+                         [103.3241, 31.3421, 0, 0, 0, 1, 'I am OK.,103.3241,31.3421'],
+                         [102.8991, 31.1351, 0, 0, 1, 1, 'It is a little cold here.,102.8991,31.1351'],
+                         [104.0123, 32.1231, 0, 0, 0, 0, 'It is quite terrifying,104.0123,32.1231'],
+                         [102.5121, 31.1221, 0, 1, 0, 1, 'HUNGRY!,102.5121,31.1221'],
+                         [103.2231, 31.4431, 1, 1, 0, 1, 'Both HUNGRY and THIRSTY.,103.2231,31.4431'],
+                         [103.631812, 31.039944000000002, 1, 1, 1, 1, 'It is really terrible,103.631812,31.039944000000002'],
+                        [103.61284,31.035489,1,1,1,1,"Horrifying, 103.61284,31.035489"],
+                        [103.764618,31.224419,1,0,1,1,"Injury, 103.764618,31.224419"],
+                        [103.710576,31.04935,0,0,0,1,"My head hurts, 103.710576,31.04935"],
+                        [103.578345,30.989435,0,0,1,1, "Thank God everything is OK, 103.578345,30.989435"],
+                        [103.638711,30.994388,0,0,0,1,"The road damages here, 103.638711,30.994388"],
+                        [103.536951,30.974574,1,1,1,1,"Houses all gone, 103.536951,30.974574"],
+                        [103.492683,30.997855,0,1,0,1,"I seems broke my leg, 103.492683,30.997855"],
+                        [103.633106,30.988073,1,0,1,1,"Injury, 103.633106,30.988073"] ,
+                        [103.656965,30.97123,0,0,1,1, "Thank God everything is OK, 103.656965,30.97123"],
+                         [103.673925,30.986834,1,1,1,1,"Houses all gone, 103.673925,30.986834"],
+                        [103.65294,30.989063,0,1,0,1,"I seems broke my leg, 103.65294,30.989063"],
+                         [103.615283,30.978661,0,1,1,1,"Injury, 103.615283,30.978661"],
+                        [103.63598,30.963055,0,0,0,1,"fracture, 103.63598,30.963055"]];
+
+    var rescuer_info = 0;
+
+	var data = {{ data | safe }};
+    if (data.type == 'report') {
+        element = [data.longitude, data.latitude, "Road Damage (" + data.longitude.toString() + "," + data.latitude.toString() + ")"]
+        damage_info.push(element);
+        console.log(element)
+     } else if (data.type == 'victim') {
+        var longitude = 103.55;
+        var latitude = 30.98;
+        element = [longitude, latitude, data.water, data.food, data.clothe, "Victim (" + longitude.toString() + "," + latitude.toString() + ")"]
+        victim_info.push(element);
+        console.log(element)
+     } else if(data.type == 'rescuer'){
+        dice = Math.floor(Math.random() * 3) + 2;
+        rescuer_info = site_info[dice]
+        console.log(rescuer_info)
+     }
+
+
+    for(i in data) {
+        console.log(i + data[i]);
+    }
+
+	var opts = {
+				width : 250,
+				height: 80,
+				title : "Coordinate:" ,
+				enableMessage:true
+			   };
+	for(var i=0;i<site_info.length;i++){
+		var marker = new BMap.Marker(new BMap.Point(site_info[i][0],site_info[i][1]));
+		var content = site_info[i][2];
+		if (i == 0 || i == 1){
+		    marker.setIcon(icon_resource_site)
+        }
+		else{
+		    marker.setIcon(icon_aid_site)
+        }
+		map.addOverlay(marker);
+		addClickHandler(content,marker);
+	}
+	for (var i=0;i<damage_info.length;i++){
+        var marker = new BMap.Marker(new BMap.Point(damage_info[i][0],damage_info[i][1]));
+		var content = damage_info[i][2];
+        marker.setIcon(icon_damage);
+        map.addOverlay(marker);
+        if (i == damage_info.length - 1 && data.type == 'report'){
+            marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+        }
+
+		addClickHandler(content,marker);
+    }
+    for (var i=0;i<victim_info.length;i++){
+        var marker = new BMap.Marker(new BMap.Point(victim_info[i][0],victim_info[i][1]));
+		var content = victim_info[i][6] ;
+        marker.setIcon(icon_victim);
+        map.addOverlay(marker);
+        if (i == victim_info.length - 1 && data.type == 'victim'){
+            marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+        }
+		addClickHandler(content,marker);
+    }
+    if (rescuer_info != 0){
+        var resource_x0 = site_info[0][0];
+        var resource_y0 = site_info[0][1];
+        var resource_x1 = site_info[1][0];
+        var resource_y1 = site_info[1][1];
+        var aid_x = rescuer_info[0];
+        var aid_y = rescuer_info[1];
+
+        if ((Math.pow(resource_x0 - aid_x, 2) + Math.pow(resource_y0 - aid_y, 2)) < (Math.pow(resource_x1 - aid_x, 2) + Math.pow(resource_y1 - aid_y, 2))){
+            var marker1 = new BMap.Marker(new BMap.Point(resource_x0,resource_y0));
+            var content1 = site_info[0][2];
+            var p1 = new BMap.Point(resource_x0,resource_y0);
+        }else{
+            var marker1 = new BMap.Marker(new BMap.Point(resource_x1,resource_y1));
+            var content1 = site_info[1][2];
+            var p1 = new BMap.Point(resource_x1,resource_y1);
+        }
+        var p2 = new BMap.Point(aid_x, aid_y);
+        var content2 = rescuer_info[2];
+        var marker2 = new BMap.Marker(new BMap.Point(aid_x,aid_y));
+        marker1.setIcon(icon_start);
+        marker2.setIcon(icon_end);
+        map.addOverlay(marker1);
+        map.addOverlay(marker2);
+		addClickHandler(content1,marker1);
+		addClickHandler(content2,marker2);
+    }
+	function addClickHandler(content,marker){
+		marker.addEventListener("click",function(e){
+			openInfo(content,e)}
+		);
+	}
+	function openInfo(content,e){
+		var p = e.target;
+		var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+		var infoWindow = new BMap.InfoWindow(content,opts);
+		map.openInfoWindow(infoWindow,point);
+	}
+
+    var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true},policy:BMAP_DRIVING_POLICY_LEAST_TIME});
+driving.search(p1, p2);
+map.enableScrollWheelZoom();
+</script>
+
+<!-- VICTIM -->
+<div class="w3-row" id="victim">
+  <div class="w3-third w3-black w3-container w3-center" style="height:700px">
+    <div class="w3-padding-64">
+      <h1>WHO ARE YOU?</h1>
+    </div>
+     <div class="w3-padding-64">
+      <a href="#" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">HOME</a>
+      <a href="#damage" class="w3-button w3-black w3-block w3-hover-yellow w3-padding-16">REPORT DAMAGE</a>
+      <a href="#live" class="w3-button w3-black w3-block w3-hover-red w3-padding-16">LIVE</a>
+      <a href="#victim" class="w3-button w3-black w3-block w3-hover-orange w3-padding-16">VICTIM</a>
+      <a href="#rescuer" class="w3-button w3-black w3-block w3-hover-blue w3-padding-16">RESCUER</a>
+    </div>
+  </div>
+  <div class="w3-twothird w3-orange w3-container" style="height:700px">
+    <div class="w3-padding-64 w3-padding-large">
+      <h1>VICTIM FOR HELP</h1>
+      <p class="w3-opacity">GET IN TOUCH</p>
+      <form class="w3-container w3-card w3-padding-32 w3-white" action="/main#live" target="_blank">
+          <input type="checkbox" name="resources" value="Water">Water<br>
+          <input type="checkbox" name="resources" value="Food">Food<br>
+          <input type="checkbox" name="resources" value="Clothe">Clothe<br>
+        <div class="w3-section">
+          <label>Your Situation</label>
+          <input class="w3-input" style="width:100%;" type="text" required name="Description">
+        </div>
+
+        <button type="submit" class="w3-button w3-teal w3-right">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- RESCUER-->
+<div class="w3-row" id="rescuer">
+  <div class="w3-third w3-black w3-container w3-center" style="height:700px">
+    <div class="w3-padding-64">
+      <h1>WHO ARE YOU?</h1>
+    </div>
+     <div class="w3-padding-64">
+      <a href="#" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">HOME</a>
+      <a href="#damage" class="w3-button w3-black w3-block w3-hover-yellow w3-padding-16">REPORT DAMAGE</a>
+      <a href="#live" class="w3-button w3-black w3-block w3-hover-red w3-padding-16">LIVE</a>
+      <a href="#victim" class="w3-button w3-black w3-block w3-hover-orange w3-padding-16">VICTIM</a>
+      <a href="#rescuer" class="w3-button w3-black w3-block w3-hover-blue w3-padding-16">RESCUER</a>
+    </div>
+  </div>
+  <div class="w3-twothird w3-blue w3-container" style="height:700px">
+    <div class="w3-padding-64 w3-padding-large">
+      <h1>RESCUER FOR CONTACT</h1>
+      <p class="w3-opacity">GET IN TOUCH</p>
+      <form class="w3-container w3-card w3-padding-32 w3-white" action="/main#live" target="_blank">
+          <input type="checkbox" name="available" value="Available">Available<br>
+        <div class="w3-section">
+          <label>RescuerID</label>
+          <input class="w3-input" style="width:100%;" type="text" required name="RescuerID">
+        </div>
+        <div class="w3-section">
+          <label>Water</label>
+          <input class="w3-input" style="width:100%;" type="text" required name="Water">
+        </div>
+        <div class="w3-section">
+          <label>Food</label>
+          <input class="w3-input" style="width:100%;" type="text" required name="Food">
+        </div>
+          <div class="w3-section">
+          <label>Clothe</label>
+          <input class="w3-input" style="width:100%;" type="text" required name="Clothe">
+        </div>
+
+        <button type="submit" class="w3-button w3-teal w3-right">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-black w3-padding-16">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">EARTHQUICK</a></p>
+</footer>
+
+</body>
+</html>
